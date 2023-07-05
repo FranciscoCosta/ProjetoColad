@@ -1,0 +1,114 @@
+.Navbar{
+    background-color: var(--primary-color);
+    height: 150px;
+    width: 100%;
+    position: sticky;
+    top :0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px;
+
+
+    .Navbar__left{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        height: 100%;
+        
+        .Image__container{
+            position: relative;
+            width: 100px;
+            height: 100%;
+            cursor: pointer;
+        }
+        h1{
+            font-size: 3rem;
+            font-weight: bolder;
+            letter-spacing: 1.5px;
+            color:var(--secondary-color);
+            cursor: pointer;
+            span{
+                color: var(--tertiary-color);
+            }
+        }
+    }
+
+    .Navbar__right{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 2.5rem;
+
+        .Navbar__link{
+            p {
+              text-decoration: none;
+              color: var(--tertiary-color);
+              font-size: 2rem;
+              font-weight: 600;
+              letter-spacing: 2px;
+              font-family: 'Lato' , sans-serif;
+              transition: all 0.4s ease-in-out;
+              cursor: pointer;
+            }
+            div {
+              width: 100%;
+              transform: scaleX(0);
+              height: 2px;
+              bottom: 0;
+              left: 0;
+              background-color: var(--tertiary-color);
+              transform-origin: center;
+              transition: transform 0.25s ease-out;
+            }
+    
+            &:hover {
+              p {
+                color: var(--secondary-color);
+              }
+              div {
+                transform: scaleX(1);
+              }
+            }
+        }
+    }
+
+    .Navbar__mobile{
+      display: none;
+    }
+
+ @media screen and (max-width: 1100px) {
+
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+    .Navbar__left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+    }
+    .Navbar__right{
+        display: none;
+    }
+    .Navbar__mobile{
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 2rem;
+      .Navbar__mobile__icon{
+        font-size: 3rem;
+        color: var(--tertiary-color);
+        cursor: pointer;
+      }
+    }
+ }
+}

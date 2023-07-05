@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,800;0,900;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Poppins:ital,wght@0,500;0,800;0,900;1,400;1,600;1,700&display=swap');
 
 *{
   margin: 0;
@@ -16,6 +16,25 @@
   background-color: #222831;
 }
 
-.image__container {
-  @apply relative xl:w-full md:w-[100%]  w-[100%] xl:h-full h-full z-10;
+:root{
+
+  --light-black: #16213E;
+  --dark-grey: #393E46;
+  --dark-green: #E94560;
+  
+  --primary-color: #161616;
+  --secondary-color: #fd4534;
+  --tertiary-color: #EEEEEE;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--dark-green);
+  border-radius: 100px;
 }

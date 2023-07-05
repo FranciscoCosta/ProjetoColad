@@ -1,9 +1,9 @@
 import Image from 'next/image'
-
+import './Home.scss'
 export default function Home() {
   return (
-    <main>
-      Home
+    <main className='Home'>
+      
     </main>
   )
 }
