@@ -11,3 +11,11 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+.bg-black{
+  background-color: #222831;
+}
+
+.image__container {
+  @apply relative xl:w-full md:w-[100%]  w-[100%] xl:h-full h-full z-10;
+}
