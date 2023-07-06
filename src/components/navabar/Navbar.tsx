@@ -1,8 +1,17 @@
+"use client"
+
 import React from 'react'
 import Image from 'next/image'
 import './Navbar.scss'
 
+import { useState } from 'react';
+
+
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { CgCloseR } from 'react-icons/cg';
+
 import Link from 'next/link'
+import { link } from 'fs';
 
 const links = [
   {
@@ -28,6 +37,11 @@ const links = [
 ]
 
 const Navbar = () => {
+
+
+  const [open, setOpen] = useState(false);
+
+
   return (
     <nav className='Navbar'>
       <div className='Navbar__left'>
@@ -48,8 +62,24 @@ const Navbar = () => {
           ))
         }
       </div>
-    <div className="Navbar__mobile">
-      X
+    <div className="Navbar__mobile-icon">
+        {
+          open ? (
+            <CgCloseR onClick={() => setOpen(!open)} className='Navbar__icon'/>
+            ) : (
+              <GiHamburgerMenu onClick={() => setOpen(!open)} className='Navbar__icon'/>
+          )
+        }
+    </div>
+    <div className={`Navbar__mobile ${open ? 'Navbar__mobile--open' : ''}`}>
+      {
+        links.map(link => (
+          <Link href={link.path} key={link.id} className='Navbar__link'>
+            <p>{link.name}</p>
+            <div className='Link__line'/>
+          </Link>
+        ))
+      }
     </div>
     </nav>
   )
