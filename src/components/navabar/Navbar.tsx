@@ -46,10 +46,10 @@ const Navbar = () => {
     <nav className='Navbar'>
       <div className='Navbar__left'>
         <div className="Image__container">
-          <Image src='/images/logo1.png' fill className='object-contain' alt='logo'/>
+          <Image src='/images/logo1.png' fill className='object-contain' alt='logo' />
         </div>
         <h1>
-        <span>Projeto</span>Colab
+          <span>Projeto</span>Colab
         </h1>
       </div>
       <div className='Navbar__right'>
@@ -57,30 +57,47 @@ const Navbar = () => {
           links.map(link => (
             <Link href={link.path} key={link.id} className='Navbar__link'>
               <p>{link.name}</p>
-              <div className='Link__line'/>
+              <div className='Link__line' />
             </Link>
           ))
         }
+        <button
+          type='button'
+          className='btn__login-logout'
+          onClick={() => {
+            console.log('logout')
+          }
+          }
+        >Logout</button>
       </div>
-    <div className="Navbar__mobile-icon">
+      <div className="Navbar__mobile-icon">
         {
           open ? (
-            <CgCloseR onClick={() => setOpen(!open)} className='Navbar__icon'/>
-            ) : (
-              <GiHamburgerMenu onClick={() => setOpen(!open)} className='Navbar__icon'/>
+            <CgCloseR onClick={() => setOpen(!open)} className='Navbar__icon' />
+          ) : (
+            <GiHamburgerMenu onClick={() => setOpen(!open)} className='Navbar__icon' />
           )
         }
-    </div>
-    <div className={`Navbar__mobile ${open ? 'Navbar__mobile--open' : ''}`}>
-      {
-        links.map(link => (
-          <Link href={link.path} key={link.id} className='Navbar__link'>
-            <p>{link.name}</p>
-            <div className='Link__line'/>
-          </Link>
-        ))
-      }
-    </div>
+      </div>
+      <div className={`Navbar__mobile ${open ? 'Navbar__mobile--open' : ''}`}>
+        {
+          links.map(link => (
+            <Link href={link.path} key={link.id} className='Navbar__link'>
+              <p>{link.name}</p>
+              <div className='Link__line' />
+            </Link>
+          ))
+        }
+        <button
+          type='button'
+          className='btn__login-logout'
+          onClick={() => {
+
+            console.log('logout')
+          }
+          }
+        >Logout</button>
+      </div>
     </nav>
   )
 }
