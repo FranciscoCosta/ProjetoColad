@@ -5,6 +5,7 @@
   align-items: center;
   margin-top: 4rem;
   gap: 2rem;
+  overflow: hidden;
 
   .Hero__cta {
     flex: 1;
@@ -29,6 +30,7 @@
         display: inline-block;
         transform: rotate(-3deg);
         color: var(--secondary-color);
+
       }
     }
 
@@ -40,6 +42,11 @@
       margin-bottom: 2rem;
       font-family: "Lato", sans-serif;
       color: var(--tertiary-color);
+
+      span{
+        color: var(--secondary-color);
+        font-family: 600;
+      }
     }
 
     button {
@@ -91,6 +98,8 @@
     justify-content: space-between;
     flex-direction: column;
     text-align: center;
+    padding: 1rem;
+    overflow: hidden;
 
     .Hero__step {
       border: 1px solid var(--secondary-color);
@@ -126,8 +135,73 @@
             background-color: var(--secondary-color);
             color: var(--primary-color);
             box-shadow: 0 0 10px rgba(255, 255, 255, 1);
-    
+            border: 2px solid black;
         }
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+  flex-direction: column;
+    gap: 0;
+    margin-top: 1rem;
+  .Hero__cta{
+    height: auto;
+    padding: 1rem;
+    h1{
+      font-size: 2rem;
+      line-height: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    p{
+      font-size: 1rem;
+      line-height: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    button{
+      padding: 0.25rem 0.5rem;
+      font-size: 1rem;
+      line-height: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .Hero__display{
+    height: auto;
+
+    .Hero__image-container{
+      width: 250px;
+      height: 250px;
+    }
+  }
+
+  .Hero__steps{
+    height: auto;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 2rem;
+
+    .Hero__step{
+      width: 250px;
+      height: 120px;
+      padding-top: 1rem;
+      h3{
+        font-size: 1.2rem;
+        margin-bottom: 0.25rem;
+        border: none;
+      }
+      p{
+        font-size: 0.7rem;
+      }
+    }
+  }
+  }
+
+  @media screen and (max-width: 850px) {
+
+    .Hero__steps{
+      flex-direction: column;
     }
   }
 }

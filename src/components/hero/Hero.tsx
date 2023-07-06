@@ -1,5 +1,7 @@
 "use client"
 
+import { motion } from "framer-motion"
+
 import React, { useState } from 'react'
 import './Hero.scss'
 
@@ -51,28 +53,37 @@ const Hero = () => {
 
   return (
     <div className='Hero'>
-      <div className="Hero__cta">
+      <motion.div
+        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+        transition={{ duration: 1 }}
+        className="Hero__cta">
         <h1 className="Hero__title">Construi a tua  <span>ideia</span> com <span>ajuda</span>.</h1>
-        <p className="Hero__description">No ProjetoColad encontras os profissionais motivados a construir a tua ideia.</p>
+        <p className="Hero__description">No <span>ProjetoColad</span>  encontras os profissionais motivados a construir a tua ideia.</p>
         <button>Saber mais</button>
 
-      </div>
-      <div className="Hero__display">
+      </motion.div>
+      <motion.div
+        whileInView={{ scale: [0, 1], opacity: [0, 1] }}
+        transition={{ duration: 1 }}
+        className="Hero__display">
         <div className='Hero__image-container'>
-          <Image src={heroImageSrc} alt="Hero__display"  fill className='image__display'/>
+          <Image src={heroImageSrc} alt="Hero__display" fill className='image__display' />
 
         </div>
 
-      </div>
-      <div className="Hero__steps">
+      </motion.div>
+      <motion.div
+        whileInView={{ x: [100, 0], opacity: [0, 1] }}
+        transition={{ duration: 1 }}
+        className="Hero__steps">
         {steps.map((step) => (
           <div className={`Hero__step ${activeStep === step.id ? "active" : ""}`} key={step.title} onMouseEnter={() => handleBoxHover(step.id)}>
             <h3 className="Hero__step-title">{step.title}</h3>
             <p className="Hero__step-description">{step.description}</p>
           </div>
         ))}
-      </div>
-    </div>
+    </motion.div>
+    </div >
   )
 }
 
